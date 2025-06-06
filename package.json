@@ -3,11 +3,15 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://inseliq.github.io/it-cube/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "git": "npm run deploy"
   },
   "dependencies": {
     "react": "^19.1.0",
