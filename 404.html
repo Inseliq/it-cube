@@ -5,18 +5,15 @@
   <meta charset="UTF-8" />
   <script>
     (function () {
-
       const BASE = '/it-cube';
-
-      let path = window.location.pathname + window.location.search + window.location.hash;
-
+      let path = window.location.pathname
+        + window.location.search
+        + window.location.hash;
       if (path.startsWith(BASE)) {
         path = path.slice(BASE.length);
       }
-
-      const redirectURL = BASE + '/index.html#' + path;
-
-      window.location.replace(redirectURL);
+      const redirectTo = BASE + '/#' + (path || '/');
+      window.location.replace(redirectTo);
     })();
   </script>
   <link rel="icon" type="image/svg+xml" href="/it-cube/img/vite.svg" />
