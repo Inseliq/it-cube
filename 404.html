@@ -1,32 +1,24 @@
-<!doctype html>
-<html lang="ru">
+<script>
+  (function () {
+    // Базовый путь вашего репозитория
+    const BASE = '/it-cube';
 
-<head>
-  <meta charset="UTF-8" />
-  <script>
-    (function () {
-      const BASE = '/it-cube';
-      let path = window.location.pathname
-        + window.location.search
-        + window.location.hash;
-      if (path.startsWith(BASE)) {
-        path = path.slice(BASE.length);
-      }
-      const redirectTo = BASE + '/#' + (path || '/');
-      window.location.replace(redirectTo);
-    })();
-  </script>
-  <link rel="icon" type="image/svg+xml" href="/it-cube/img/vite.svg" />
-  <!-- Это лого -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    It-Cube
-  </title>
-  <script type="module" crossorigin src="/it-cube/assets/index-DnS3iVhL.js"></script>
-  <link rel="stylesheet" crossorigin href="/it-cube/assets/index-tn0RQdqM.css">
-</head>
+    // Полный изначальный путь по которому пришли
+    const fullPath = window.location.pathname + window.location.search + window.location.hash;
 
-<body>
-  <div id="root" data-framework="react"></div>
-</body>
-</html>
+    // Если URL начинается с BASE, подгружаем index.html
+    if (fullPath.startsWith(BASE)) {
+      fetch(BASE + '/index.html')
+        .then(res => res.text())
+        .then(html => {
+          // Заменяем текущее содержимое страницы на ваш SPA
+          document.open();
+          document.write(html);
+          document.close();
+
+          // Меняем URL в адресной строке обратно на изначальный
+          window.history.replaceState(null, '', fullPath);
+        });
+    }
+  })();
+</script>
