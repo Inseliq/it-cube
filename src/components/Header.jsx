@@ -27,14 +27,14 @@ const Header = () => {
     <header ref={headerRef} className='layout'>
       <nav data-device="desktop">
         <Link to="/" className="home" onClick={handleLinkClick}>
-          <img src="/img/banner.png" alt="it-cube" /> IT-Cube
+          <img src="./img/banner.png" alt="it-cube" /> IT-Cube
         </Link>
         <hr />
 
         {/* Курсовая работа */}
         <div className="menu course" data-open={openMenu === 'course'}>
           <button id="course" onClick={() => toggleMenu('course')}>
-            <img src="/img/course_work.png" alt="course" /> Курсовая работа
+            <img src="./img/course_work.png" alt="course" /> Курсовая работа
           </button>
           <div className="content-menu">
             <Link to="/course_work/download_software" onClick={handleLinkClick}>
@@ -49,7 +49,7 @@ const Header = () => {
         {/* Дипломная работа */}
         <div className="menu diplome" data-open={openMenu === 'diplome'}>
           <button id="diplome" onClick={() => toggleMenu('diplome')}>
-            <img src="/img/diplome_project.png" alt="diplome" /> Дипломная работа
+            <img src="./img/diplome_project.png" alt="diplome" /> Дипломная работа
           </button>
           <div className="content-menu">
             <span>Раздел находится в разработке 🛠</span>
@@ -59,7 +59,7 @@ const Header = () => {
         {/* Уроки */}
         <div className="menu lessons" data-open={openMenu === 'lessons'}>
           <button id="lessions" onClick={() => toggleMenu('lessons')}>
-            <img src="/img/lessions.png" alt="lessons" />Полезные материалы
+            <img src="./img/lessions.png" alt="lessons" />Полезные материалы
           </button>
           <div className="content-menu">
             <span>Раздел находится в разработке 🛠</span>
@@ -67,27 +67,27 @@ const Header = () => {
         </div>
 
         <button className="prime">
-          <img src="/img/prime_icon.png" alt="prime" /> Prime
+          <img src="./img/prime_icon.png" alt="prime" /> Prime
         </button>
       </nav>
 
       <nav data-device="mobile">
         <Link className='home' to="/" onClick={handleLinkClick}>
-          <img src="/img/banner.png" alt="it-cube" />
+          <img src="./img/banner.png" alt="it-cube" />
           IT-Cube
         </Link>
         <hr />
-        <Link to="/" onClick={handleLinkClick}>
-          <img src="/img/course_work.png" alt="course" />
+        <Link to="/course_work" onClick={handleLinkClick}>
+          <img src="./img/course_work.png" alt="course" />
         </Link>
-        <Link to="/" onClick={handleLinkClick}>
-          <img src="/img/diplome_project.png" alt="diplome" />
+        <Link to="/diplome_work" onClick={handleLinkClick}>
+          <img src="./img/diplome_project.png" alt="diplome" />
         </Link>
-        <Link to="/" onClick={handleLinkClick}>
-          <img src="/img/lessions.png" alt="lessons" />
+        <Link to="/materials" onClick={handleLinkClick}>
+          <img src="./img/lessions.png" alt="lessons" />
         </Link>
-        <Link className='prime' to="/" onClick={handleLinkClick}>
-          <img src="/img/prime_icon.png" alt="prime" /> Prime
+        <Link className='prime' to="/prime" onClick={handleLinkClick}>
+          <img src="./img/prime_icon.png" alt="prime" /> Prime
         </Link>
       </nav>
     </header>

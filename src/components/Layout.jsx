@@ -1,4 +1,3 @@
-// Layout.jsx
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
@@ -13,7 +12,7 @@ const Layout = () => {
       <div className="container">
         <Header />
         <main className='component'>
-            <Outlet />
+          <Outlet />
         </main>
       </div>
       <Footer />

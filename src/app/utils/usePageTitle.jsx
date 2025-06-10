@@ -3,6 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 const TITLE_MAP = {
   '/': 'It-Cube',
+  '/course_work': 'Курсовой проект',
+  '/diplome_work': 'Дипломный проект',
+  '/materials': 'Полезные материалы',
+  '/prime': 'Премиум',
   '/course_work/download_software': 'Установка VS Code и VS',
   '/course_work/create_project': 'Создание проекта',
 };

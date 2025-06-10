@@ -1,3 +1,306 @@
-main {
-  
+section.course {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & .course-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out;
+
+    & h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #3498db, #2c3e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    & .course-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+  }
+
+  & .lessons-container {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  & .lesson-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    animation: fadeInUp 0.6s ease-out;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      border-color: #3498db;
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #f6f9ff, #e3eeff);
+      border-color: #3498db;
+
+      & .lesson-status {
+        background: #3498db;
+      }
+    }
+
+    & .lesson-number {
+      width: 40px;
+      height: 40px;
+      background: #3498db;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-right: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    & .lesson-content {
+      flex-grow: 1;
+
+      & h3 {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 1.3rem;
+      }
+
+      & p {
+        margin: 0.3rem 0 0;
+        color: #7f8c8d;
+      }
+    }
+
+    & .lesson-status {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ecf0f1;
+      border: 2px solid #bdc3c7;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+  }
+}
+
+/* Анимации */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesson-card {
+  animation: cardAppear 0.5s ease-out forwards;
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+section.build {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  & .build__title {
+    font-size: 2.4rem;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  & .build__subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  & .build__construction {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    & .bar {
+      width: 10px;
+      height: 50px;
+      background: linear-gradient(45deg, #f39c12, #e67e22);
+      border-radius: 4px;
+      animation: pulse 1.5s infinite ease-in-out;
+
+      /* Чтобы анимация была "волной" у каждой полоски задержка */
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 0.9s;
+      }
+
+      &:nth-child(5) {
+        animation-delay: 1.2s;
+      }
+    }
+  }
+}
+
+section.development {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f9;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  & .development__title {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    color: #2c3e50;
+  }
+
+  & .development__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  & .development__animation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  & .flask {
+    position: relative;
+    width: 60px;
+    height: 100px;
+    background: #ccc;
+    border-radius: 30px 30px 10px 10px;
+    box-shadow: inset 0 0 10px #aaa;
+    overflow: hidden;
+    animation: sway 4s ease-in-out infinite;
+
+    & .flask--left {
+      animation-delay: 0s;
+    }
+
+    & .flask--center {
+      animation-delay: 1.3s;
+    }
+
+    & .flask--right {
+      animation-delay: 2.6s;
+    }
+  }
+
+  & .liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(135deg, #6bc1ff, #005fa3);
+    border-radius: 0 0 30px 30px;
+    animation: liquidChange 4s ease-in-out infinite;
+  }
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes liquidChange {
+
+  0%,
+  100% {
+    background: linear-gradient(135deg, #6bc1ff, #005fa3);
+  }
+
+  50% {
+    background: linear-gradient(135deg, #00d2ff, #0077cc);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scaleY(1.6);
+    opacity: 1;
+  }
 }
