@@ -1,0 +1,24 @@
+<script>
+  (function () {
+    // Базовый путь вашего репозитория
+    const BASE = '/it-cube';
+
+    // Полный изначальный путь по которому пришли
+    const fullPath = window.location.pathname + window.location.search + window.location.hash;
+
+    // Если URL начинается с BASE, подгружаем index.html
+    if (fullPath.startsWith(BASE)) {
+      fetch(BASE + '/index.html')
+        .then(res => res.text())
+        .then(html => {
+          // Заменяем текущее содержимое страницы на ваш SPA
+          document.open();
+          document.write(html);
+          document.close();
+
+          // Меняем URL в адресной строке обратно на изначальный
+          window.history.replaceState(null, '', fullPath);
+        });
+    }
+  })();
+</script>

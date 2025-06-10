@@ -1,0 +1,68 @@
+@import url(./react.import.css);
+@import url(./layout.css);
+
+:root {
+  --color-bg: #1a1a1e;
+  --color-menu: #121214;
+  --color-site: #202024;
+  --color-btn: #5865f2;
+  --color-btn-hover: #4654c0;
+  --color-secnd: #242429;
+  --color-form-text: #222327;
+  --color-font: #aaaab1;
+  --color-font-hover: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  background: var(--color-bg);
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-font);
+  font-family: 'Jost__It-Cube', sans-serif;
+}
+
+div#root[data-framework="react"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+div.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1920px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
+}
